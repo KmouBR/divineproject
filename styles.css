@@ -12,7 +12,7 @@
     /*Cores*/
     --white-color: #fff;
     --dark-color: #252525;
-    --primary-color: #131047;
+    --primary-color: #181561;
     --secondary-color: #FFD700;
     --light-pink-color: #faf4f5;
     --medium-gray-color: #ccc;
@@ -100,4 +100,17 @@ header .navbar {
 .navbar .nav-menu .nav-link:hover {
     color: var(--white-color);
     background: var(--secondary-color);
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: var(--primary-color);
+}
+
+.hero-section .section-content {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--white-color);
+    justify-content: space-between;
 }
