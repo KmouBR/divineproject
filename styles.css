@@ -13,7 +13,7 @@
     --white-color: #fff;
     --dark-color: #252525;
     --primary-color: #181561;
-    --secondary-color: #FFD700;
+    --secondary-color: #1551d3;
     --light-pink-color: #faf4f5;
     --medium-gray-color: #ccc;
 
@@ -105,6 +105,8 @@ header .navbar {
 .hero-section {
     min-height: 100vh;
     background: var(--primary-color);
+    background: url("img/hero-stars.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 .hero-section .section-content {
