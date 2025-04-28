@@ -61,6 +61,29 @@ img {
     display: block;
 }
 
+.section-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: var(--site-max-width);
+}
+
+.section-title {
+    text-align: center;
+    padding: 60px 0 100px;
+    text-transform: uppercase;
+    font-size: var(--font-size-xl);
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 5px;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: var(--border-radius-s);
+    background: var(--secondary-color) ;
+}
+/*--------------------------------------- HEADER SECTION ------------------------------------------------*/
 
 /* Navbar Styling */
 header {
@@ -70,7 +93,6 @@ header {
     z-index: 5;
     backdrop-filter: blur(5px);
 }
-/*--------------------------------------- HEADER SECTION ------------------------------------------------*/
 
 header .navbar {
     padding: 20px;
@@ -187,6 +209,55 @@ header .navbar {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+/* About section styling */
+.about-section {
+    padding: 120px 0;
+    background: var(--light-pink-color);
+}
+
+.about-section .section-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 20px;
+}
+
+.about-section .about-image-wrapper .about-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--border-radius-circle);
+}
+
+.about-section .about-details .section-title {
+    padding: 0; 
+}
+
+.about-section .about-details {
+    max-width: 50%;
+}
+
+.about-section .about-details .text {
+    line-height: 30px;
+    margin: 50px 0 30px;
+    text-align: center;
+    font-size: var(--font-size-m);
+}
+
+.about-section .social-link-list {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+.about-section .social-link-list .social-link {
+    color: var(--primary-color);
+    font-size: var(--font-size-l);
+    transition: 0.2s ease;
+}
+
+.about-section .social-link-list .social-link:hover {
+    color: var(--secondary-color);
+}
 /*--------------------------------------- END HERO ------------------------------------------------*/
 @media screen and (max-width: 900px) {
     :root {
@@ -194,6 +265,17 @@ header .navbar {
         --font-size-l: 1.3rem;
         --font-size-xl: 1.5rem;
         --font-size-xxl: 1.8rem;
+    }
+
+    body.show-mobile-menu::before {
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        background: rgba(0, 0, 0, 0.2);
     }
 
     .hero-section .section-content {
