@@ -35,7 +35,9 @@ function deleteEnergetico($pdo, $id) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['save'])) saveEnergetico($pdo, $_POST);
     if (isset($_POST['delete'])) deleteEnergetico($pdo, $_POST['id']);
-    header('Location: crud.php'); exit;
+    header('Location: tables.php'); // redireciona de volta para a listagem
+    exit;
+
 }
 ?>
 <!DOCTYPE html>
@@ -76,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <textarea class="form-control" name="descricao" rows="3"><?= htmlspecialchars($item['descricao']) ?></textarea>
                 </div>
                 <button type="submit" name="save" class="btn btn-primary">Salvar</button>
-                <a href="crud.php" class="btn btn-secondary">Cancelar</a>
+              <a href="tables.php" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </div>
