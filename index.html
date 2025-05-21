@@ -1,87 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Divine Website | Coding</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divine Website | Coding</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <!-- GSAP + ScrollTrigger (para as animações) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
-    <!-- Header / Navbar -->
-    <header>
-        <nav class="navbar section-content">
-            <a href="#" class="nav-logo">
-                <h2 class="logo-text">🔱 Divine</h2>
-            </a>
-            <ul class="nav-menu">
-                <button id="menu-close-button" class="fas fa-times"></button>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Menu</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Depoimentos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Contato</a>
-                </li>
-            </ul>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar section-content">
+      <a href="#" class="nav-logo">
+        <h2 class="logo-text">🔱 Divine</h2>
+      </a>
+      <ul class="nav-menu">
+        <!-- botão de fechar menu mobile -->
+        <button id="menu-close-button" class="fas fa-times"></button>
+        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+        <li class="nav-item"><a href="#produtos" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+      <!-- botão de abrir menu mobile -->
+      <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+  </header>
 
-            <button id="menu-open-button" class="fas fa-bars"></button>
-        </nav>
-    </header>
+  <main>
+ <!-- Hero Section -->
+<section class="hero-section" id="home">
+    <div class="section-content">
+      <div class="hero-details">
+        <!-- título principal -->
+        <h2 class="title">Best Energetic</h2>
+        <!-- subtítulo -->
+        <h3 class="subtitle">
+          Torne o seu dia fantástico com os nossos energéticos especiais!
+        </h3>
+        <!-- descrição -->
+        <p class="description">
+          Bem-vindo ao nosso paraíso dos energéticos, onde cada fórmula
+          conta uma história e cada sabor desperta alegria.
+        </p>
+        <!-- botões -->
+        <div class="buttons">
+          <a href="#produtos" class="button order-now">Order Now</a>
+          <a href="#contato" class="button contact-us">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img
+          src="img/hero-logo-image.png"
+          alt="Hero Divine"
+          class="hero-image"
+        />
+      </div>
+    </div>
+  </section>  
+  
+    <!-- About Section -->
+    <section class="about-section" id="sobre">
+      <div class="section-content">
+        <div class="about-image-wrapper">
+          <img src="img/divine-about.png" alt="Sobre Divine" class="about-image"/>
+        </div>
+        <div class="about-details">
+          <h2 class="section-title">Sobre</h2>
+          <p class="text">
+            Nós acreditamos que cada pessoa carrega dentro de si uma força
+            divina, capaz de superar limites e conquistar grandes feitos.
+            Inspirados pela pureza dos anjos e pela coragem dos arcanjos,
+            criamos energéticos que elevam sua jornada a um novo patamar. Na
+            Divine, cada produto é desenvolvido com dedicação e excelência,
+            para impulsionar seu corpo e sua mente em direção à sua melhor
+            versão. Trabalhamos com fórmulas de alta qualidade, porque
+            acreditamos que você merece um cuidado digno de quem nasceu para
+            brilhar.
+          </p>
+          <div class="social-link-list">
+            <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <main>
-        <!--Hero Section-->
-        <section class="hero-section">
-          <div class="section-content">
-            <div class="hero-details">
-                <h2 class="title">Best Supplements
-                    <h3 class="subtitle">Torne o seu dia fantástico com os nossos suplementos especiais!</h3>
-                    <p class="description">Bem-vindo ao nosso paraíso dos suplementos, onde cada fórmula conta uma história e cada sabor desperta alegria.</p>
-                    <div class="buttons">
-                        <a href="#" class="button order-now">Order Now</a>
-                        <a href="#" class="button contact-us">Contact Us</a>
-                    </div>
-                </h2> 
-            </div>
-            <div class="hero-image-wrapper"> 
-                <img src="img/hero-logo-image.png" alt="Hero" class="hero-image">
-            </div>
-          </div>   
-        </section>
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+      <div class="section-content">
+        <h2 class="section-title">Menu</h2>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <img src="img/green-divine.png" alt="Flavour 1" class="menu-image1"/>
+            <h3>Angel Citrus</h3>
+            <p>Refrescância divina para dar aquele up no seu dia.</p>
+          </div>
+          <div class="menu-card">
+            <img src="img/white-divine.png" alt="Flavour 2" class="menu-image2"/>
+            <h3>Archangel Berry</h3>
+            <p>Sabor intenso inspirado na coragem dos arcanjos.</p>
+          </div>
+          <div class="menu-card">
+            <img src="img/blue-divine.png" alt="Flavour 3" class="menu-image3"/>
+            <h3>Heavenly Tropical</h3>
+            <p>Explosão de frutas tropicais que eleva sua energia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- About Section-->
-         <section class="about-section">
-            <div class="section-content">
-                <div class="about-image-wrapper">
-                    <img src="img/divine-about.png" alt="About" class="about-image">
-                </div>
-                <div class="about-details">
-                    <h2 class="section-title">About Us</h2>
-                    <p class="text">Nós acreditamos que cada pessoa carrega dentro de si uma força divina, capaz de superar limites e conquistar grandes feitos. 
-                        Inspirados pela pureza dos anjos e pela coragem dos arcanjos, criamos suplementos que elevam sua jornada a um novo patamar. 
-                        Na Divine, cada produto é desenvolvido com dedicação e excelência, para impulsionar seu corpo e sua mente em direção à sua melhor versão. 
-                        Trabalhamos com fórmulas de alta qualidade, porque acreditamos que você merece um cuidado digno de quem nasceu para brilhar.</p>
-                    <div class="social-link-list">
-                        <a href="#" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fa-brands fa-facebook"></i></a>
-                    </div> 
-                </div>
-            </div>
-         </section>
-    </main>
+    <!-- Testimonials Section -->
+    <section class="depoimentos-section" id="depoimentos">
+      <div class="section-content">
+        <h2 class="section-title">Depoimentos</h2>
+        <div class="testimonials">
+          <div class="testimonial-card">
+            <p>“O Angel Citrus me dá aquele gás que eu preciso para ir além nos treinos!”</p>
+            <h4>– Mariana S.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>“Archangel Berry é imbatível. Sabor e performance em um só gole.”</p>
+            <h4>– Lucas M.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>“Com o Heavenly Tropical, sinto que posso conquistar o impossível.”</p>
+            <h4>– Pedro A.</h4>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src = "script.js"></script>
+    <!-- Products Section -->
+    <section class="products-section" id="produtos">
+      <div class="section-content">
+        <h2 class="section-title">Produtos</h2>
+        <div class="products-grid">
+          <div class="product-card">
+            <img src="" alt="Divine Pack"/>
+            <h3>Combo Divine Pack</h3>
+            <p>Pacote com 3 sabores – Citrus, Berry e Tropical.</p>
+            <a href="#" class="button order-now">Comprar Agora</a>
+          </div>
+          <div class="product-card">
+            <img src="https://source.unsplash.com/400x400/?vitamins" alt="Energy Booster"/>
+            <h3>Energy Booster</h3>
+            <p>Fórmula avançada para máxima performance.</p>
+            <a href="#" class="button order-now">Comprar Agora</a>
+          </div>
+          <div class="product-card">
+            <img src="https://source.unsplash.com/400x400/?protein,shake" alt="Protein Shake"/>
+            <h3>Protein Shake</h3>
+            <p>Proteína premium para recuperação muscular.</p>
+            <a href="#" class="button order-now">Comprar Agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contato">
+      <div class="section-content">
+        <h2 class="section-title">Contato</h2>
+        <div class="contact-wrapper">
+          <form class="contact-form" action="#" method="POST">
+            <input type="text" name="nome" placeholder="Seu Nome" required />
+            <input type="email" name="email" placeholder="Seu E-mail" required />
+            <textarea name="mensagem" rows="5" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit" class="button order-now">Enviar Mensagem</button>
+          </form>
+          <div class="contact-info">
+            <h3>Fale Conosco</h3>
+            <p><i class="fa fa-phone"></i> +55 11 91234-5678</p>
+            <p><i class="fa fa-envelope"></i> contato@divine.com</p>
+            <p><i class="fa fa-map-marker-alt"></i> São Paulo, Brasil</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Seu script com menu e GSAP -->
+  <script src="script.js"></script>
 </body>
 </html>
