@@ -152,7 +152,14 @@ $product = $products[$id - 1];
     <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
     <p><em><?php echo $product['description']; ?></em></p>
     <p><strong>Sabor:</strong> <?php echo $product['flavor']; ?></p>
-    <a href="../index.php" class="btn-back">← Voltar para a Home</a>
+    <a href="../index.php" class="btn-back" style="margin-right: 1rem;">← Voltar</a>
+  <form method="POST" action="adicionar_carrinho.php" style="display: inline;">
+    <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+    <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
+    <input type="hidden" name="flavor" value="<?php echo $product['flavor']; ?>">
+    <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
+    <button type="submit" class="btn-primary">🛒 Adicionar ao Carrinho</button>
+  </form>
   </div>
 </body>
 </html>
