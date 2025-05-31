@@ -1,6 +1,6 @@
 <?php
 // Conectar ao banco
-$db = new SQLite3('../carrinho.db'); // ajuste o caminho se necessário
+$db = new SQLite3('carrinho.db'); // ajuste o caminho se necessário
 
 // Criar tabela se não existir
 $db->exec("CREATE TABLE IF NOT EXISTS carrinho (

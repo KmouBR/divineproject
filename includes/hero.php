@@ -1,4 +1,4 @@
-<section id="home" class="hero">
+<section id="home" class="hero fadeInUp delay-2">
     <div class="hero-content">
         <div class="hero-logo">
             <img src="assets/hero-logo-image.png" alt="Divine Energy Logo" class="logo-large">
