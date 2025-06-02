@@ -18,6 +18,8 @@ $pageTitle = "Divine Energy - Poder Divino em Cada Gole";
     <?php include 'includes/header.php'; ?>
 
     <?php include 'includes/ver_carrinho.php'; ?>
+
+    <?php include 'includes/alert.php'; ?>
     
     <!-- Hero Section -->
     <?php include 'includes/hero.php'; ?>

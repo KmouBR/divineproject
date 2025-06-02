@@ -1,4 +1,14 @@
 <?php
+session_start(); // Adicionado para mensagens flash
+
+// Mostrar mensagem de sucesso/erro se existir
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+    $messageType = $_SESSION['message_type'];
+    unset($_SESSION['message']);
+    unset($_SESSION['message_type']);
+}
+
 $products = [
     [
         'id' => 1,
@@ -6,6 +16,7 @@ $products = [
         'color' => 'white',
         'description' => 'Pureza e Iluminação',
         'flavor' => 'Coco e Baunilha',
+        'price' => '12.90',
         'image' => '../assets/white-divine.png'
     ],
     [
@@ -14,6 +25,7 @@ $products = [
         'color' => 'blue',
         'description' => 'Serenidade e Paz',
         'flavor' => 'Mirtilo e Lavanda',
+        'price' => '12.90',
         'image' => '../assets/blue-divine.png'
     ],
     [
@@ -22,6 +34,7 @@ $products = [
         'color' => 'green',
         'description' => 'Esperança e Renovação',
         'flavor' => 'Maçã Verde e Hortelã',
+        'price' => '12.90',
         'image' => '../assets/green-divine.png'
     ],
     [
@@ -30,6 +43,7 @@ $products = [
         'color' => 'red',
         'description' => 'Força e Paixão',
         'flavor' => 'Morango e Romã',
+        'price' => '12.90',
         'image' => '../assets/red-divine.png'
     ]
 ];
@@ -142,9 +156,32 @@ $product = $products[$id - 1];
     animation: fadeInUp 0.8s ease-out;
   }
 
+  .alert {
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: center;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  .alert-success {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .alert-error {
+    background-color: #f44336;
+    color: white;
+  }
   </style>
 </head>
 <body>
+  <?php if (!empty($message)): ?>
+    <div class="alert alert-<?php echo $messageType; ?>">
+      <?php echo $message; ?>
+    </div>
+  <?php endif; ?>
+
+  <div id="product-<?php echo $product['id']; ?>" class="product-detail <?php echo $product['color']; ?>">
   <div 
     id="product-<?php echo $product['id']; ?>" 
     class="product-detail <?php echo $product['color']; ?>">
@@ -153,10 +190,11 @@ $product = $products[$id - 1];
     <p><em><?php echo $product['description']; ?></em></p>
     <p><strong>Sabor:</strong> <?php echo $product['flavor']; ?></p>
     <a href="../index.php" class="btn-back" style="margin-right: 1rem;">← Voltar</a>
-  <form method="POST" action="adicionar_carrinho.php" style="display: inline;">
+  <form method="POST" action="../includes/adicionar_carrinho.php" style="display: inline;">
     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
     <input type="hidden" name="name" value="<?php echo $product['name']; ?>">
     <input type="hidden" name="flavor" value="<?php echo $product['flavor']; ?>">
+    <input type="hidden" name="price" value="<?php echo $product['price']; ?>">
     <input type="hidden" name="image" value="<?php echo $product['image']; ?>">
     <button type="submit" class="btn-primary">🛒 Adicionar ao Carrinho</button>
   </form>
