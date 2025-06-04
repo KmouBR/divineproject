@@ -1,4 +1,17 @@
-<?php session_start(); ?>
+<?php
+session_start();
+$usuario = $_SESSION['usuario'] ?? '';
+
+$total = 0;
+if (!empty($usuario)) {
+    $pdo = new PDO('sqlite:db/database.db');
+    $stmt = $pdo->prepare("SELECT SUM(quantidade) as total FROM carrinho WHERE usuario = ?");
+    $stmt->execute([$usuario]);
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $total = $row['total'] ?? 0;
+}
+?>
+
 <header class="header fadeInUp delay-1">
     <div class="container">
         <div class="logo">
@@ -17,11 +30,12 @@
         <div class="actions">
             <?php if (isset($_SESSION['user_id'])): ?>
                 
-                <div class="cart-icon" onclick="toggleCart()">
-                    🛒
-                    <span class="cart-count" id="cart-count">0</span>
+                <div class="cart-icon">
+                    <a href="/divineproject/includes/carrinho.php">
+                        🛒
+                    </a>
                 </div>
-               
+                
                 <a href="/divineproject/logout.php" class="nav-logout-btn" style="margin-left: 15px;">Sair</a>
             <?php else: ?>
              
