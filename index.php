@@ -1,5 +1,5 @@
 <?php
-// Definição do título da página
+
 $pageTitle = "Divine Energy - Poder Divino em Cada Gole";
 ?>
 
@@ -38,7 +38,7 @@ $pageTitle = "Divine Energy - Poder Divino em Cada Gole";
     
     <!-- Scripts -->
     <script>
-        // Script para efeito de scroll suave
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -51,3 +51,10 @@ $pageTitle = "Divine Energy - Poder Divino em Cada Gole";
     <script src="js/carrinho.js"></script>
 </body>
 </html>
+
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+

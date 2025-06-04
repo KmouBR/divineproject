@@ -4,8 +4,8 @@
     <h2>🛒 Seu Carrinho</h2>
     <div id="cart-items">
         <?php
-        // Conecta ao banco
-        $pdo = new PDO('sqlite:carrinho.db');
+        
+        $pdo = new PDO('sqlite:db/database.db');
 
         $stmt = $pdo->query("SELECT * FROM carrinho");
         $items = $stmt->fetchAll();

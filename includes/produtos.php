@@ -1,13 +1,15 @@
 <?php
-session_start(); // Adicionado para mensagens flash
+session_start();
 
-// Mostrar mensagem de sucesso/erro se existir
-if (isset($_SESSION['message'])) {
+$message = null;
+$messageType = null;
+
+if (isset($_SESSION['message'], $_SESSION['message_type'])) {
     $message = $_SESSION['message'];
     $messageType = $_SESSION['message_type'];
-    unset($_SESSION['message']);
-    unset($_SESSION['message_type']);
+    unset($_SESSION['message'], $_SESSION['message_type']);
 }
+
 
 $products = [
     [
@@ -51,7 +53,7 @@ $products = [
 
 $id = isset($_GET['id']) ? (int) $_GET['id'] : null;
 
-// 3) Valida se existe um produto com esse ID
+
 if (!$id || !isset($products[$id - 1])) {
     echo "<p>Produto não encontrado. <a href='index.php'>Voltar</a></p>";
     exit;
@@ -64,13 +66,13 @@ $product = $products[$id - 1];
 <head>
   <meta charset="UTF-8">
   <title><?php echo $product['name']; ?> — Detalhes</title>
-  <link rel="stylesheet" href="../css/styles.css"><!-- apontar para seu CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
   <style>
-    /* Estilos rápidos só para esta página */
+    
 
     body {
       background: linear-gradient(#0b0c2a, rgba(0, 0, 20, 0.7)), url('../assets/hero-stars.jpg');
-      color: #ffffff; /* textos brancos */
+      color: #ffffff; 
       font-family: 'Poppins', sans-serif;
       background-size: cover;
       background-position: center;
@@ -81,7 +83,7 @@ $product = $products[$id - 1];
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
     }
     .product-card {
-      background-color: rgba(0, 0, 0, 0.6); /* fundo semi-transparente escuro */
+      background-color: rgba(0, 0, 0, 0.6); 
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
@@ -90,8 +92,8 @@ $product = $products[$id - 1];
     .product-detail {
       max-width: 600px;
       margin: 4rem auto;
-      background: rgba(255, 255, 255, 0.05); /* bem sutil */
-      backdrop-filter: blur(10px); /* vidro fosco */
+      background: rgba(255, 255, 255, 0.05); 
+      backdrop-filter: blur(10px);
       padding: 2rem; 
       border-radius: 10px;
       color: #fff;
@@ -175,7 +177,7 @@ $product = $products[$id - 1];
   </style>
 </head>
 <body>
-  <?php if (!empty($message)): ?>
+  <?php if (!empty($message) && !empty($messageType)): ?>
     <div class="alert alert-<?php echo $messageType; ?>">
       <?php echo $message; ?>
     </div>

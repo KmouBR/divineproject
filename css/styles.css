@@ -1,4 +1,4 @@
-/* Estilos globais */
+
 * {
   margin: 0;
   padding: 0;
@@ -140,6 +140,62 @@ section::before {
 }
 
 .nav ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-login-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-login-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  transition: width 0.3s ease;
+}
+
+.nav-login-btn:hover::after {
+  width: 100%;
+}
+
+.nav-logout-btn {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  position: relative;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.nav-logout-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  transition: width 0.3s ease;
+}
+
+.nav-logout-btn:hover::after {
   width: 100%;
 }
 
@@ -591,7 +647,7 @@ section::before {
   margin-top: 0.5rem;
   font-size: 0.8rem;
 }
-/* Animações */
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -623,7 +679,7 @@ section::before {
   animation-duration: 0.6s;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
-  animation-delay: 0s; /* padrão */
+  animation-delay: 0s; 
 }
 
 .delay-1 {

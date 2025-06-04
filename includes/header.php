@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <header class="header fadeInUp delay-1">
     <div class="container">
         <div class="logo">
@@ -13,10 +14,19 @@
             </ul>
         </nav>
 
-        <!-- Carrinho de Compras -->
-        <div class="cart-icon" onclick="toggleCart()">
-            🛒
-            <span class="cart-count" id="cart-count">0</span>
+        <div class="actions">
+            <?php if (isset($_SESSION['user_id'])): ?>
+                
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+               
+                <a href="/divineproject/logout.php" class="nav-logout-btn" style="margin-left: 15px;">Sair</a>
+            <?php else: ?>
+             
+                <a href="/divineproject/login-page/index.php" class="nav-login-btn">Login / Register</a>
+            <?php endif; ?>
         </div>
     </div>
 </header>

@@ -19,9 +19,9 @@
                 </form>
                 
                 <?php
-                // Processamento simples do formulário
+                
                 if (isset($_POST['enviar'])) {
-                    // Aqui você pode adicionar código para processar o formulário
+                    
                     echo '<div class="success-message">Mensagem enviada com sucesso!</div>';
                 }
                 ?>
